@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    char c;
+    int c;
     printf("Ingrese un caracter: ");
     c = getchar();
     printf("El caracter ingresado es: %c\n", c);
