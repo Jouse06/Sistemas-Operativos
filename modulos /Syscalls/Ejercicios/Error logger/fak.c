@@ -11,8 +11,9 @@ int main(int argc, char *argv[]){
     int fd2 = open(argv[1], O_RDONLY );
 
     char buffer[1024];
-    while(read(fd2, &buffer, sizeof(buffer)) > 0){
-        write(1, &buffer, sizeof(buffer));
+    int bytes_read;
+    while((bytes_read = read(fd2, &buffer, sizeof(buffer))) > 0){
+        write(1, &buffer, bytes_read);
     }
 
     if(fd2 == -1){
