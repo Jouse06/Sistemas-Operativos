@@ -25,7 +25,11 @@
   - A PCB stores context, process ID (PID), parent ID (PPID), priority, and register states required for context switching.
 
 3. State Models: Draw or describe the 5-state process model (New, Ready, Running, Blocked, Terminated).
-  - 
+  - New: The process is being created and not yet ready to run.
+  - Ready: The process is ready to run but not currently executing.
+  - Running: The process is currently executing.
+  - Blocked: The process is waiting for a resource (e.g., I/O).
+  - Terminated: The process has completed execution and is being cleaned up.
 
 4. Suspension: What is the "Suspended" state in the 7-state model? Why does the OS swap processes to disk?
   - The "Suspended" state is used to save memory by swapping out blocked processes to disk.
