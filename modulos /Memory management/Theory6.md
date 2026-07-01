@@ -70,3 +70,22 @@ C) Swapping is no longer necessary.
 11. **LRU Tracing:** Trace the same reference string `[0, 1, 2, 3, 0, 1, 4]` using the LRU algorithm. Compare the page fault count.
 
 12. **Fragmentation Math:** A process needs 31,566 bytes. Pages are 2,048 bytes. How many pages does it need? What is the internal fragmentation (wasted space in the last page)?
+
+
+## Practical Operations 
+
+13. **Process Maps:** Write a C program containing an infinite loop. While it runs, open a new terminal, find its PID, and read the `/proc/[pid]/maps` file.
+
+14. **Segment Identification:** In the output of the `maps` file, identify which memory addresses correspond to the Heap and which to the Stack.
+
+15. **Address Printing:** Write a C program that prints the memory addresses of: a global variable, a local variable, a dynamically allocated `malloc` pointer, and a function pointer. Compare them to the `maps` file.
+
+16. **Using `strace`:** Compile a simple "Hello World" program. Run it using `strace ./program`. Identify the `execve` and `write` system calls in the output.
+
+17. **Tracking Memory with `strace`:** Use `strace` on a program that uses `malloc()`. Identify the `mmap` or `brk` system calls the OS uses to allocate the dynamic memory.
+
+18. **Random Access Write:** Modify the provided "leealeatorio.c" to "escribealeatorio.c". Have it accept 3 arguments: Filename, Byte Offset, and Character to write. Use `lseek()` to place the character exactly there.
+
+19. **Comparing Copies:** Use `strace` on the standard Linux `cp` command. Compare its system calls to the custom `cp` simulator you wrote in Module 3. How does Linux optimize it?
+
+20. **Segmentation Fault:** Write a program that deliberately tries to access memory address `0x0` or an uninitialized pointer. Observe the Core Dump / Segmentation fault triggered by the MMU (Memory Management Unit).
